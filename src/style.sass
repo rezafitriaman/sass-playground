@@ -1,0 +1,77 @@
+/// to learn special function
+/// url()
+/// calc(), element(), progid:...(), and expression()
+/// min() and max()
+
+$primary: #81899b
+$accent: #302e24
+$warn: #dfa612
+
+:root
+  --primary: #{$primary}
+  --accent: #{$accent}
+  --warn: #{$warn}
+
+  // Even though this looks like a Sass variable, it's valid CSS so it's not
+  // evaluated.
+  --consumed-by-js: $primary
+
+@mixin app-background($color) 
+    #{if(&, '&.app-background', '.app-background')} 
+    background-color: $color
+    color: rgba(#fff, 0.75)
+    display: block
+    height: 100px
+    width: 100px
+
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap')
+body
+    .hallo
+    color: var(--primary)
+    font:
+        family: 'Syne', sans-serif
+        size: 21px
+        weight: 400
+
+    .custom
+        $rounded-corners: false
+        $if-true: 15px 0 0 15px
+        $if-false: null
+
+        &-button
+            display: block
+            height: 100px
+            width: 100px
+            background-color: var(--warn)
+            border-radius: if($rounded-corners, 15px, 5px)
+            margin: if($rounded-corners, $if-true, $if-false)
+
+    .sidebar
+        //background-color: hotpink
+        @include app-background(#c6538c)
+
+        //@include app-background(red, true)
+        &.app-background
+            @include app-background($primary)
+    
+    %toolbelt
+        display: block
+        width: 100px
+        height: 100px
+        box-sizing: border-box
+        border-top: 1px rgba(#000, .9) solid
+        padding: 16px 0
+
+        &:hover
+            border: 2px rgba(#000, .5) solid
+
+    .action-buttons
+        @extend %toolbelt
+        background-color: #4285f4
+
+
+    .reset-buttons
+        @extend %toolbelt
+        background-color: #cddc39
+
+    // next is variables
