@@ -15,7 +15,7 @@ function component() {
 
 	//element.appendChild(myIcon);
 
-  return element;
+  //return element;
 }
 
 document.body.appendChild(component());

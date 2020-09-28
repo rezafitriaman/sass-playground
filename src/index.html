@@ -5,11 +5,37 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div class="custom-button"></div>
-    <div class="sidebar app-background">
-      <div class="app-background"><span>dit is </span></div>
+    <div class="section-first">
+      <div class="custom-button"></div>
+      <div class="sidebar app-background">
+        <div class="app-background"><span>dit is </span></div>
+      </div>
+      <div class="action-buttons"></div>
+      <div class="reset-buttons"></div>
     </div>
-    <div class="action-buttons"></div>
-    <div class="reset-buttons"></div>
+    <div class="section-second">
+      <ul class="list">
+        <li>master one <span class="code"></span></li>
+        <li>master two</li>
+        <li>
+          <ul class="list">
+            <li>master one</li>
+            <li>master two</li>
+            <li>master three <span class="code"></span></li>
+          </ul>
+        </li>
+      </ul>
+      <ol class="list-two">
+        <li>master one <span class="code"></span></li>
+        <li>master second</li>
+        <li>
+          <ol class="list-two">
+            <li>master one</li>
+            <li>master second</li>
+            <li>master three <span class="code"></span></li>
+          </ol>
+        </li>
+      </ol>
+    </div>
   </body>
 </html>

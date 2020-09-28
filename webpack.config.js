@@ -13,6 +13,7 @@ module.exports = (env, argv) => {
 		devtool: 'inline-source-map',
 		devServer: {
 			contentBase: './dist',
+			writeToDisk: true
 		},
 		plugins: [
 			new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
